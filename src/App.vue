@@ -2,12 +2,14 @@
 import {ref} from "vue"
 import * as jose from 'jose'
 
-const cle = ref()
+let cle = ref()
 let claims = ref()
+
 function decryptCle(){
-  
-claims = cle
+console.log(cle.value)
+claims = jose.decodeJwt(cle.value)
 console.log(claims)
+
 
 }
 </script>
