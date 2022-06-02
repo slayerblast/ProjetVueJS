@@ -1,17 +1,21 @@
 <script setup>
 import {ref} from "vue"
-const cle = ref(0)
-setInterval(()=>{
-  cle.value++
-}, 1000)
+import * as jose from 'jose'
+
+const cle = ref()
+let claims = ref()
 function decryptCle(){
-  cle.value = 0;
+  
+claims = cle
+console.log(claims)
+
 }
 </script>
 
 <template>
 <h1>DECRYPTEUR</h1>
 <button @click="decryptCle()">mettez la clé</button>
-<input type="number" v-model="cle">
+<input type="text" v-model="cle">
+
 <p>{{cle}}</p>
 </template>
