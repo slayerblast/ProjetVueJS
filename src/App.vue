@@ -3,11 +3,11 @@ import {ref} from "vue"
 import * as jose from 'jose'
 
 let cle = ref()
-let claims = ref()
+let claims = ref(null)
 
 function decryptCle(){
 console.log(cle.value)
-claims = jose.decodeJwt(cle.value)
+claims.value = jose.decodeJwt(cle.value)
 console.log(claims)
 
 
@@ -19,5 +19,5 @@ console.log(claims)
 <button @click="decryptCle()">mettez la clé</button>
 <input type="text" v-model="cle">
 
-<p>{{cle}}</p>
+<p>{{claims}}</p>
 </template>
