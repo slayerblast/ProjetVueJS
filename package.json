@@ -12,7 +12,7 @@
   },
   "dependencies": {
     "jose": "^4.8.1",
-    "vue": "^3.2.36"
+    "vue": "^3.3.2"
   },
   "devDependencies": {
     "@rushstack/eslint-patch": "^1.1.0",
